@@ -1,7 +1,10 @@
 package application.models;
 
+import javax.xml.bind.annotation.XmlAttribute;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
 
-
+@XmlRootElement
 public class Client {
 
 	private Long id;
@@ -18,6 +21,7 @@ public class Client {
 		this.name = name;
 	}
 
+	@XmlAttribute
 	public Long getId() {
 		return id;
 	}
@@ -26,6 +30,7 @@ public class Client {
 		this.id = id;
 	}
 
+	@XmlElement
 	public String getName() {
 		return name;
 	}
@@ -36,7 +41,7 @@ public class Client {
 
 	@Override
 	public String toString() {
-		return "{'id':'"+this.getId()+"','name':'"+this.getName()+"'}";
+		return "id:"+this.getId()+"\nname:"+this.getName();
 	}
 	
 	
